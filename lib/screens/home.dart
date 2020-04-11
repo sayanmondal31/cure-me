@@ -2,7 +2,10 @@ import 'package:covid19/screens/contactNumber.dart';
 import 'package:covid19/screens/help_and_contact.dart';
 import 'package:covid19/screens/hospitals.dart';
 import 'package:covid19/screens/loadingScreen.dart';
+import 'package:covid19/screens/prevention.dart';
+import 'package:covid19/screens/symptoms.dart';
 import 'package:covid19/services/information.dart';
+import 'package:covid19/services/networking.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -41,13 +44,25 @@ class _MyHomePageState extends State<MyHomePage> {
     }));
   }
 
+  void gethospitalAndBed()async{
+    Information information = Information();
+
+    var hospitalandbedinfo = await information.covidHospitalsAnd();
+
+
+    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
+      return Hospitals(hospitalBed: hospitalandbedinfo,);
+    }));
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          FloatingActionButton(heroTag: 'tag1', onPressed: null),
+          FloatingActionButton(heroTag: 'tag1', onPressed: null,child: Icon(Icons.access_alarm),),
           FloatingActionButton(
             heroTag: 'tag2',
             onPressed: () {
@@ -131,17 +146,14 @@ class _MyHomePageState extends State<MyHomePage> {
                           children: <Widget>[
                             MyInfoCard(
                               button: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Hospitals()));
+                                gethospitalAndBed();
                               },
                               text: 'Hospitals & beds',
                             ),
                             SizedBox(width: 20),
                             MyInfoCard(
                               button: () {
-                                CircularProgressIndicator();
+                               
                                 getHlpAndContact();
                               },
                               text: 'help & Contact',
@@ -156,12 +168,16 @@ class _MyHomePageState extends State<MyHomePage> {
                         Row(
                           children: <Widget>[
                             MyInfoCard(
-                              button: null,
+                              button: (){
+                                showModalBottomSheet(context: context, builder: (context)=>Symptoms());
+                              },
                               text: 'Symptoms',
                             ),
                             SizedBox(width: 20),
                             MyInfoCard(
-                              button: null,
+                              button: (){
+                                showModalBottomSheet(context: context, builder: (context)=>Prevention());
+                              },
                               text: 'Prevention',
                             )
                           ],

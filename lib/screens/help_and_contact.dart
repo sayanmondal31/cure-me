@@ -1,6 +1,7 @@
 import 'package:covid19/model/contact.dart';
 import 'package:covid19/services/information.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HelpAndContact extends StatefulWidget {
   final contact;
@@ -38,7 +39,14 @@ class _HelpAndContactState extends State<HelpAndContact> {
 
     print(contactNumber);
   }
-
+   _launchCaller(String number) async {
+    String url = "tel:$number";
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
   @override
   Widget build(BuildContext context) {
     print("build called");
@@ -52,7 +60,13 @@ class _HelpAndContactState extends State<HelpAndContact> {
                       child: ListTile(
               leading: Text(myContacts.location) ,
               title: Text(myContacts.number,textAlign: TextAlign.center,),
-              trailing: Icon(Icons.call),
+              trailing: GestureDetector(
+                onTap:(){
+                  _launchCaller(myContacts.number);
+                },
+                child: CircleAvatar(
+                  foregroundColor: Colors.blueGrey,
+                  child: Icon(Icons.call))),
 
             ),
           );
