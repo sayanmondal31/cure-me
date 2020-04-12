@@ -1,12 +1,6 @@
-
 import 'package:flutter/material.dart';
 
-
-
-class Symptoms extends StatelessWidget{
-
-
-  
+class Symptoms extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String updatedDatalist;
@@ -31,43 +25,80 @@ class Symptoms extends StatelessWidget{
                   color: Colors.blue),
             ),
             Expanded(
-                          child: Container(
+              child: Container(
                 child: ListView(
                   children: <Widget>[
-                    ListTile(
-                      title:Text("data")
+                    Card(
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child: Image(
+                        height: 150,width: 150,
+                        image: AssetImage('images/cough.gif'),
+                      ),
                     ),
-                    ListTile(
-                      title:Text("data")
+                    SizedBox(
+                      height: 5,
                     ),
-                    ListTile(
-                      title:Text("data")
+                    Center(
+                        child: Text(
+                      'cough',
+                      style: TextStyle(color: Colors.grey, fontSize: 25.0),
+                    )),
+                    
+                     
+                      SizedBox(height:5),
+                       Card(
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child: Image(
+                        height: 150,
+                        image: AssetImage('images/fever.gif'),
+                      ),
                     ),
-                    ListTile(
-                      title:Text("data")
+                    SizedBox(
+                      height: 5,
                     ),
-                    ListTile(
-                      title:Text("data")
+                    Center(
+                        child: Text(
+                      'Fever',
+                      style: TextStyle(color: Colors.grey, fontSize: 25.0),
+                    )),
+                    SizedBox(height:5),
+                       Card(
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child: Image(
+                        height: 150,
+                        image: AssetImage('images/tired.gif'),
+                      ),
                     ),
-                    ListTile(
-                      title:Text("data")
+                    SizedBox(
+                      height: 5,
                     ),
-                    ListTile(
-                      title:Text("data")
+                    Center(
+                        child: Text(
+                      'Tired',
+                      style: TextStyle(color: Colors.grey, fontSize: 25.0),
+                    )),
+                     SizedBox(height:5),
+                       Card(
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child: Image(
+                        height: 150,
+                        image: AssetImage('images/breath.gif'),
+                      ),
                     ),
-                    ListTile(
-                      title:Text("data")
-                    ),ListTile(
-                      title:Text("data")
-                    ),ListTile(
-                      title:Text("data")
+                    SizedBox(
+                      height: 5,
                     ),
+                    Center(
+                        child: Text(
+                      'Difficulty breathing (severe cases)',
+                      style: TextStyle(color: Colors.grey, fontSize: 25.0),
+                    )),
+                    SizedBox(height:30)
                   ],
                 ),
                 // color: Colors.indigo,
               ),
             )
-       
           ],
         ),
       ),

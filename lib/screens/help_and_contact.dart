@@ -51,7 +51,10 @@ class _HelpAndContactState extends State<HelpAndContact> {
   Widget build(BuildContext context) {
     print("build called");
     return Scaffold(
-      appBar: AppBar(title: Center(child: Text("Help and Contact"))),
+      backgroundColor: Colors.brown[100],
+      appBar: AppBar(
+        backgroundColor: Colors.brown,
+        title: Center(child: Text("Help and Contact"))),
       body: ListView.builder(
         itemCount: 36,
         itemBuilder: (context, index) {

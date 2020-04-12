@@ -43,7 +43,10 @@ class _HospitalsState extends State<Hospitals> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Center(child: Text("Hospitals & Bed"))),
+      backgroundColor: Colors.brown[100],
+      appBar: AppBar(
+        backgroundColor: Colors.brown,
+        title: Center(child: Text("Hospitals & Bed"))),
       body: ListView.builder(
         itemCount: 36,
         itemBuilder: (context, index) {

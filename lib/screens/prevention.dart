@@ -34,34 +34,90 @@ class Prevention extends StatelessWidget{
                           child: Container(
                 child: ListView(
                   children: <Widget>[
-                    ListTile(
-                      title:Text("data")
+                    
+                    Card(
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child: Image(
+                        height: 150,width: 150,
+                        image: AssetImage('images/stayhome.gif'),
+                      ),
                     ),
-                    ListTile(
-                      title:Text("data")
+                    SizedBox(
+                      height: 5,
                     ),
-                    ListTile(
-                      title:Text("data")
+                    Center(
+                        child: Text(
+                      'Stay Home',
+                      style: TextStyle(color: Colors.grey, fontSize: 25.0),
+                    )),
+                    
+                     
+                      SizedBox(height:5),
+                       Card(
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child: Image(
+                        height: 150,
+                        image: AssetImage('images/distance.gif'),
+                      ),
                     ),
-                    ListTile(
-                      title:Text("data")
+                    SizedBox(
+                      height: 5,
                     ),
-                    ListTile(
-                      title:Text("data")
+                    Center(
+                        child: Text(
+                      'Keep distance',
+                      style: TextStyle(color: Colors.grey, fontSize: 25.0),
+                    )),
+                    SizedBox(height:5),
+                       Card(
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child: Image(
+                        height: 150,
+                        image: AssetImage('images/washhands.gif'),
+                      ),
                     ),
-                    ListTile(
-                      title:Text("data")
+                    SizedBox(
+                      height: 5,
                     ),
-                    ListTile(
-                      title:Text("data")
+                    Center(
+                        child: Text(
+                      'Wash hands',
+                      style: TextStyle(color: Colors.grey, fontSize: 25.0),
+                    )),
+                     SizedBox(height:5),
+                       Card(
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child: Image(
+                        height: 150,
+                        image: AssetImage('images/coughprotection.gif'),
+                      ),
                     ),
-                    ListTile(
-                      title:Text("data")
-                    ),ListTile(
-                      title:Text("data")
-                    ),ListTile(
-                      title:Text("data")
+                    SizedBox(
+                      height: 5,
                     ),
+                    Center(
+                        child: Text(
+                      'Cover your cough',
+                      style: TextStyle(color: Colors.grey, fontSize: 25.0),
+                    )),
+                    SizedBox(height:30),
+                      SizedBox(height:5),
+                       Card(
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child: Image(
+                        height: 150,
+                        image: AssetImage('images/emergencycall.gif'),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Center(
+                        child: Text(
+                      'Sick? call helpline number',
+                      style: TextStyle(color: Colors.grey, fontSize: 25.0),
+                    )),
+                    SizedBox(height:30)
                   ],
                 ),
                 // color: Colors.indigo,
